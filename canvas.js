@@ -9,55 +9,7 @@ var c =canvas.getContext('2d');
 var color = ['red','blue','black','yellow','green']
 var strokeStyle =color[Math.floor(Math.random()*color.length)];
 
-// c.fillStyle= "rgba(255,0,0, 0.5)"
-// c.fillRect(100,100,100, 100);
-// c.fillStyle= "rgba(0,0,255, 0.5)"
-// c.fillRect(200,200,100, 100);
-// c.fillStyle= "rgba(0,255,0, 0.5)"
-// c.fillRect(400,200,100, 100);
 
-// console.log(canvas);
-
-//Line
-
-// c.beginPath();
-// c.moveTo(50,300);
-// c.lineTo(300,100);
-// c.lineTo(400,300);
-// c.strokeStyle= "#fa34a3";
-// c.lineTo(500,600);
-// c.lineTo(560,100);
-
-
-// c.stroke();
-
-// //Arc / Circle
-// c.beginPath();
-// c.arc(300,300, 30,0, Math.PI*2, false);
-// c.strokeStyle='blue';
-// c.stroke();
-
-// for (var i = 0; i<100; i++) {
-//     var x= Math.random()*window.innerWidth;
-//     var y=Math.random()*window.innerHeight;
-//     c.beginPath();
-   
-// c.arc(x,y, 30,0, Math.PI*2, false
-//     );
-//     c.strokeStyle=strokeStyle;
-// c.stroke();
-// }
-//     c.beginPath();
-
-// c.beginPath();
-// c.arc(200,200, 30,0, Math.PI*2, false);
-// c.strokeStyle=strokeStyle;
-// c.stroke();
-// var x=Math.random()* innerWidth;
-// var y=Math.random()*innerHeight;
-// var dx=Math.random()-0.5*10;
-// var dy=Math.random()-0.5*10;
-// var radius=30;
 
 
 var mouse={
@@ -70,6 +22,7 @@ window.addEventListener('mousemove',function(event){
     mouse.y=event.y;
     console.log(mouse);
 })
+
 
 
 function getRandomNumberBetween(min,max){
@@ -119,7 +72,7 @@ if (this.y+this.radius>innerHeight ||
         }
      
  }
- else if (this.radius > 2){
+ else if (this.radius > 4){
      this.radius -=1;
  }
 
@@ -166,3 +119,4 @@ circleArray[i].update();
 
 }
 animate();
+window.addEventListener("resize", function(){document.getElementsByTagName("canvas")[0].height=window.innerHeight;});
